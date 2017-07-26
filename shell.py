@@ -35,11 +35,9 @@ def rent_sbs():
     
 #if they choose the number 3 they get both an atv and side-by-side
 def rent_both():
-    product_name = input('Atv or Side-by-Side').title().strip()
-    how_many = int(input('how many',product_name,' would you like?'))  
-    rental_products['Atv']['stock'] -= how_many_atv
-    rental_products['Side-by-Side']['stock'] -= how_many_sbs
-    print(rental_products)
+    rent_atv()
+    
+    rent_sbs()
 
 if __name__ == '__main__':
     main()
