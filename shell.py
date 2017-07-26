@@ -33,16 +33,17 @@ def rent_atv():
 def rent_sbs():
     product_name = 'Side-by-Side'.strip()
     how_many = int(input('how many Side-by-Side\'s would you like?\n:'))
-    # rental_products['Side-by-Side']['stock'] -= how_many
+    sales_tax = .07 * how_many
+    price = (rental_products[product_name]['price'] * how_many)
+    total = price + sales_tax    
     remove_stock(how_many, product_name, rental_products)
     print(rental_products)
+    print('$:',total)
     
 #if they choose the number 3 they get both an atv and side-by-side
 def rent_both():
     rent_atv()
-
     rent_sbs()
-
 if __name__ == '__main__':
     main()
 
