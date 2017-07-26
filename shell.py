@@ -1,5 +1,4 @@
-rental_products = {'Atv':{'price': 30, 'stock': 1}, 'Side-by-Side':{'price': 100, 'stock': 1}}
-
+from core import rental_products
 print('Welcome to Shedlia\'s Atv and Side-By-Side Rental Agency')
 # give the user choices through numbers So it can be easier to choose what you want
 decision = input(''' What would you like:
