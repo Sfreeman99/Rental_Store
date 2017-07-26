@@ -1,0 +1,1 @@
+print('Welcome to Shedlia\'s Atv and Side-By-Side Rental Agency')
