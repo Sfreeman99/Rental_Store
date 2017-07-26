@@ -1,4 +1,4 @@
-rental_products = {'Atv':{'price': 30, 'stock': 1}, 'Side-by-Side':{'price': 100, 'stock': 1}}
+# rental_products = {'Atv':{'price': 30, 'stock': 1}, 'Side-by-Side':{'price': 100, 'stock': 1}}
 
 
 def remove_stock(how_many,product_name, rental_products):
@@ -40,7 +40,7 @@ def total(how_many,product_name, rental_products):
     30.07
     '''
     sales_tax = .07 * how_many
-    price = (rental_products[product_name]['price'] * how_many)
+    price = (rental_products[product_name]['rental price'] * how_many)
     total = price + sales_tax
     return total
     

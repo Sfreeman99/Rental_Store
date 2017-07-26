@@ -1,5 +1,5 @@
-from core import rental_products, remove_stock, total
-
+from core import remove_stock, total
+from disk import *
 def main():
     print('Welcome to Shedlia\'s Atv and Side-By-Side Rental Agency')
     # give the user choices through numbers So it can be easier to choose what you want
@@ -17,13 +17,13 @@ def main():
 def rent():
     #the variable 'how many' is used to see how many of the products the customer wants
     decision = input('What do you want to rent:\n\t1. Atv\n\t2. Side-by-Side\n:')
-    
+    rental_products = read_inventory()
     if decision == '1':
         product_name = 'Atv'.strip()
-    
+        
         how_many = int(input('how many Atv\'s would you like?\n:'))
     
-        remove_stock(how_many,product_name,rental_products)
+        print(remove_stock(how_many,product_name,rental_products))
     
         print('$:',total(how_many,product_name,rental_products))
     
