@@ -1,5 +1,3 @@
-# rental_products = {'Atv':{'price': 30, 'stock': 1}, 'Side-by-Side':{'price': 100, 'stock': 1}}
-
 
 def remove_stock(how_many,product_name, rental_products):
     ''' (int,str, dict of dict) -> 
