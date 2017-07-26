@@ -21,8 +21,12 @@ def rent_atv():
     #the variable 'how many' is used to see how many of the products the customer wants
     product_name = 'Atv'.strip()
     how_many = int(input('how many Atv\'s would you like?\n:'))
+    sales_tax = .07 * how_many
+    price = (rental_products[product_name]['price'] * how_many)
+    total = price + sales_tax
     remove_stock(how_many,product_name,rental_products)
     print(rental_products)
+    print('$:',total)
     
 #if they choose the number 2 they get a side-by-side
 #sbs stands for side-by-side
@@ -36,7 +40,7 @@ def rent_sbs():
 #if they choose the number 3 they get both an atv and side-by-side
 def rent_both():
     rent_atv()
-    
+
     rent_sbs()
 
 if __name__ == '__main__':
