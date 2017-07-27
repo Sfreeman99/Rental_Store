@@ -23,22 +23,38 @@ def remove_stock(how_many,product_name, rental_products):
     return rental_products
         
 
-def total(how_many,product_name, rental_products):
+def total(how_many,product_name,sales_tax, rental_products):
     ''' int,str, dict of dict -> total
 
     returns the total transaction of what you rented
 
-    >>> total(1, 'Atv', {'Atv':{'price': 30, 'stock': 3}})
+    >>> total(1, 'Atv',.07, {'Atv':{'rental price': 30, 'stock': 3}})
     30.07
-    >>> total(2, 'Atv', {'Atv':{'price': 30, 'stock': 3}})
+    >>> total(2, 'Atv',.14, {'Atv':{'rental price': 30, 'stock': 3}})
     60.14
-    >>> total(0, 'Atv', {'Atv':{'price': 30, 'stock': 3}})
+    >>> total(0, 'Atv',.00, {'Atv':{'rental price': 30, 'stock': 3}})
     0.0
-    >>> total(1, 'Atv', {'Atv':{'price': 30, 'stock': 3}})
+    >>> total(1, 'Atv',.07, {'Atv':{'rental price': 30, 'stock': 3}})
     30.07
     '''
-    sales_tax = .07 * how_many
-    price = (rental_products[product_name]['rental price'] * how_many)
+    price = rental_products[product_name]['rental price'] * how_many
     total = price + sales_tax
     return total
     
+def sales_tax(how_many):
+    ''' int -> float
+    
+    takes in an int and gives out a float
+    that would be the tax
+    
+    >>> sales_tax(3)
+    0.21
+    >>> sales_tax(2)
+    0.14
+    >>> sales_tax(1)
+    0.07
+    >>> sales_tax(0)
+    0.0
+    '''
+    
+    return round(how_many * .07, 2)
