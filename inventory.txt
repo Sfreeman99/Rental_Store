@@ -1,3 +1,3 @@
-Year || Manufacturer || Model Name || Original Price || In Stock || Category || Price to Rent ||
-2017 || Yamaha || YXZ1000 SS SE || 22399 || 5 || Side-by-Side || 100
-2018 || Yamaha || Grizzly Eps || 9699 || 5 || Atv || 30
+|| Category ||Year || Manufacturer || Model Name || Original Price || In Stock || Price to Rent ||
+|| Side-by-Side ||2017 || Yamaha || YXZ1000 SS SE || 22399 || 5 || 100
+|| Atv || 2018 || Yamaha || Grizzly Eps || 9699 || 5 || Atv || 30
