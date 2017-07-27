@@ -1,4 +1,4 @@
-from core import remove_stock, total
+from core import *
 from disk import *
 def main():
     print('Welcome to Shedlia\'s Atv and Side-By-Side Rental Agency')
@@ -18,21 +18,30 @@ def rent():
     #the variable 'how many' is used to see how many of the products the customer wants
     decision = input('What do you want to rent:\n\t1. Atv\n\t2. Side-by-Side\n:')
     rental_products = read_inventory()
+    print(rental_products)
     if decision == '1':
         product_name = 'Atv'.strip()
         
         how_many = int(input('how many Atv\'s would you like?\n:'))
     
-        print(remove_stock(how_many,product_name,rental_products))
+        new_inventory = remove_stock(how_many,product_name,rental_products)
+
+        write_inventory(new_inventory)
+
+        sales_tax = sales_tax(how_many)
     
-        print('$:',total(how_many,product_name,rental_products))
+        print('$:',total(how_many, product_name, sales_tax, rental_products))
     
     if decision == '2':
         product_name = 'Side-by-Side'.strip()
     
         how_many = int(input('how many Atv\'s would you like?\n:'))
-    
+        
+        write_inventory(new_inventory)
+        
         remove_stock(how_many,product_name,rental_products)
+
+        sales_tax = sales_tax(how_many)
 
         print('$:',total(how_many,product_name,rental_products))        
     
