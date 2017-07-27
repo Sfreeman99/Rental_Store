@@ -10,16 +10,17 @@ def main():
     #user chooses through numbers what they want
     #if they choose the number 1 they get an atv in stock
     if decision == '1':
-        rent()
+        # rent()
+        rent_2()
     elif decision == '2':
         return_item()
 
-def rent():
+# def rent():
     #the variable 'how many' is used to see how many of the products the customer wants
-    decision = input('What do you want to rent:\n\t1. Atv\n\t2. Side-by-Side\n:')
+    category = input('What do you want to rent:\n\t1. Atv\n\t2. Side-by-Side\n:')
     rental_products = read_inventory()
     print(rental_products)
-    if decision == '1':
+    if category == '1':
         product_name = 'Atv'.strip()
         
         how_many = int(input('how many Atv\'s would you like?\n:'))
@@ -32,7 +33,7 @@ def rent():
     
         print('$:',total(how_many, product_name, tax, rental_products))
     
-    if decision == '2':
+    if category == '2':
         product_name = 'Side-by-Side'.strip()
     
         how_many = int(input('how many Atv\'s would you like?\n:'))
@@ -50,6 +51,10 @@ def rent():
 #if they choose the number 2 they get a side-by-side
 #sbs stands for side-by-side
 
+def rent_2():
+    category = input('What would you like to rent:\n\tAtv\n\tSide-by-Side\n:')
+    manufacturer = input('What manufacturer would you prefer?\n\tHonda\n\tYamaha')
+    year = input('What year model do you want:\n\t2017\n\t2018')
     
 if __name__ == '__main__':
     main()

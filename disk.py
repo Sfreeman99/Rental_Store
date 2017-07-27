@@ -6,8 +6,16 @@ def read_inventory():
     rental_products = {}
     for item in inventory:
         sublist = item.strip().split('||')
-        rental_products[sublist[0].strip()] = {'Year': int(sublist[1].strip()),'Manufacturer': sublist[2].strip(), 'Original Price': float(sublist[3].strip()),'stock': int(sublist[4].strip()), 'rental price': float(sublist[5].strip())}
-    return rental_products
+        # rental_products[sublist[0].strip()] = {
+        #     'Year': int(sublist[1].strip()),
+        #     'Manufacturer': sublist[2].strip(),
+        #     'Original Price': float(sublist[3].strip()),
+        #     'stock': int(sublist[4].strip()),
+        #     'rental price': float(sublist[5].strip())
+        # }
+        rental_products[sublist[0].strip()] = rental_products[sublist[0].strip()].update({sublist[2].strip(): {}})
+
+    print(rental_products)
     
 def write_inventory(new_inventory):
     message = 'Category || Year || Manufacturer || Original Price || In Stock || Price to Rent ||\n'
