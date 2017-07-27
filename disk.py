@@ -5,13 +5,16 @@ def read_inventory():
     
     rental_products = {}
     for item in inventory:
-        sublist = item.split('||')
-        rental_products[sublist[0].strip()] = {'Year': int(sublist[1].strip()),'Manufacturer': sublist[2].strip(), 'Original Price': float(sublist[3].strip()), 'stock': int(sublist[4].strip()), 'rental price': float(sublist[5].strip())}
+        print(item)
+        sublist = item.strip().split('||')
+        print(sublist)
+        rental_products[sublist[0].strip()] = {'Year': int(sublist[1].strip()),'Manufacturer': sublist[2].strip(), 'Original Price': float(sublist[3].strip()),'stock': int(sublist[4].strip()), 'rental price': float(sublist[5].strip())}
     return rental_products
-
+    
 def write_inventory(new_inventory):
-    message = 'Year || Manufacturer || Mode Name || Original Price || In Stock || Category || Price to Rent ||\n'
+    message = 'Category || Year || Manufacturer || Original Price || In Stock || Price to Rent ||\n'
+
     for key,value in new_inventory:
-        message += '{} || {} || {} || {} || {} || {} || {} ||'.format(value['Year'], value['Manufacturer'], value['Model Name'], value['Original Price'],value['stock'], value['rental price'],key)
+        message += '{} || {} || {} || {} || {} || {} '.format(key, value['Year'], value['Manufacturer'], value['Original Price'],value['stock'], value['rental price'])
     with open('inventory.txt','w') as new_file:
         new_file.write(message)
