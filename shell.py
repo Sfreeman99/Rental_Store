@@ -28,22 +28,24 @@ def rent():
 
         write_inventory(new_inventory)
 
-        sales_tax = sales_tax(how_many)
+        tax = sales_tax(how_many)
     
-        print('$:',total(how_many, product_name, sales_tax, rental_products))
+        print('$:',total(how_many, product_name, tax, rental_products))
     
     if decision == '2':
         product_name = 'Side-by-Side'.strip()
     
         how_many = int(input('how many Atv\'s would you like?\n:'))
         
+        new_inventory = remove_stock(how_many,product_name,rental_products)
+        
         write_inventory(new_inventory)
         
         remove_stock(how_many,product_name,rental_products)
 
-        sales_tax = sales_tax(how_many)
+        tax = sales_tax(how_many)
 
-        print('$:',total(how_many,product_name,rental_products))        
+        print('$:',total(how_many,product_name,tax,rental_products))        
     
 #if they choose the number 2 they get a side-by-side
 #sbs stands for side-by-side

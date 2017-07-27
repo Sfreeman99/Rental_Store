@@ -56,5 +56,5 @@ def sales_tax(how_many):
     >>> sales_tax(0)
     0.0
     '''
-    
-    return round(how_many * .07, 2)
+    tax = round(how_many * .07, 2)
+    return tax

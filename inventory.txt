@@ -1,3 +1,3 @@
-Category || Year || Manufacturer || Original Price || In Stock || Price to Rent 
-Side-by-Side || 2017 || Yamaha || 22399 || 5 || 100
-Atv || 2018 || Yamaha || 9699 || 5 || 30
+Category || Year || Manufacturer || Original Price || In Stock || Price to Rent ||
+Side-by-Side || 2017 || Yamaha || 22399.0 || 4 || 100.0
+Atv || 2018 || Yamaha || 9699.0 || -4 || 30.0
