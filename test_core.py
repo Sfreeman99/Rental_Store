@@ -23,8 +23,8 @@ def test_sales_tax():
     assert sales_tax(0) == 0.0
 
 def test_total_for_one_atv():
-    assert total(1, 'Atv', 0.07, {'Atv':{'rental price': 30, 'stock': 5}}) == 
+    assert total(1, 'Atv', 0.07, {'Atv':{'rental price': 30, 'stock': 5}}) == 30.07
 
 def test_total_for_two_atvs():
-    assert total(2,'Atv', sales_tax, {'Atv':{'rental price': 30, 'stock': 5}}) == 
+    assert total(2,'Atv', 0.14, {'Atv':{'rental price': 30, 'stock': 5}}) == 60.14
 
