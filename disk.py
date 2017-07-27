@@ -6,7 +6,7 @@ def read_inventory():
     rental_products = {}
     for item in inventory:
         sublist = item.split('||')
-        rental_products[sublist[0].strip()] = {'Year': int(sublist[1].strip()),'Manufacturer': sublist[2].strip(), 'Model Name': sublist[3].strip(), 'Original Price': float(sublist[4].strip()), 'stock': int(sublist[5].strip()), 'rental price': float(sublist[6].strip())}
+        rental_products[sublist[0].strip()] = {'Year': int(sublist[1].strip()),'Manufacturer': sublist[2].strip(), 'Original Price': float(sublist[3].strip()), 'stock': int(sublist[4].strip()), 'rental price': float(sublist[5].strip())}
     return rental_products
 
 def write_inventory(new_inventory):
