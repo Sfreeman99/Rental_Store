@@ -29,9 +29,11 @@ def rent():
 
         write_inventory(new_inventory)
 
-        tax = sales_tax(how_many)
+        total_amount = total(how_many, product_name, rental_products)
     
-        print('$:',total(how_many, product_name, tax, rental_products))
+        print('$:',total_amount)
+
+        print('With tax added that would be $:', round(sales_tax(total_amount), 3))
     
     if category == '2':
         product_name = 'Side-by-Side'.strip()
