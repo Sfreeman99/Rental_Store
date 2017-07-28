@@ -1,5 +1,5 @@
-Category || Year || Manufacturer || Original Price || In Stock || Price to Rent ||
-Side-by-Side || 2017 || Yamaha || 22399.0 || 4 || 100.0
-Side-by-Side || 2017 || Honda || 22399.0 || 4 || 100.0
-Atv || 2018 || Honda || 9699.0 || 4 || 30.0
-Atv || 2018 || Yamaha || 9699.0 || 4 || 30.0
+Category || Original Price || In Stock || Price to Rent ||
+Side-by-Side || 19000.0 || 4 || 100.0
+Atv || 8699.0 || 4 || 30.0
+Scooter || 1000.0 || 5 || 15.0
+Bike || 350 || 5 || 5.0
