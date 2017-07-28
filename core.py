@@ -15,7 +15,7 @@ def remove_stock(how_many,product_name, rental_products):
     ... {'Atv':{'price': 30, 'stock': 4}})
     True
     '''
-
+    print(rental_products)
     if product_name == 'Atv':
         rental_products[product_name]['stock'] -= how_many
     if product_name == 'Side-by-Side':

@@ -10,12 +10,12 @@ def main():
     #user chooses through numbers what they want
     #if they choose the number 1 they get an atv in stock
     if decision == '1':
-        # rent()
-        rent_2()
+        rent()
+        # rent_2()
     elif decision == '2':
         return_item()
 
-# def rent():
+def rent():
     #the variable 'how many' is used to see how many of the products the customer wants
     category = input('What do you want to rent:\n\t1. Atv\n\t2. Side-by-Side\n:')
     rental_products = read_inventory()

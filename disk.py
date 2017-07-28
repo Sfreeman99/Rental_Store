@@ -12,10 +12,10 @@ def read_inventory():
             'rental price': float(sublist[3].strip())
         }
 
-    print(rental_products)
+    return rental_products
     
 def write_inventory(new_inventory):
-    message = 'Category || Year || Manufacturer || Original Price || In Stock || Price to Rent ||\n'
+    message = 'Category || Original Price || In Stock || Price to Rent ||\n'
     for key, value in new_inventory.items():
         message += '{} || {} || {} || {}\n'.format(key, value['Original Price'],value['stock'], value['rental price'])
     with open('inventory.txt','w') as new_file:
