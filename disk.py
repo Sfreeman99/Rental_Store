@@ -21,9 +21,7 @@ def write_inventory(new_inventory):
     with open('inventory.txt','w') as new_file:
         new_file.write(message)
 
-def history(product_name, new_inventory):
-    message = 'First Name, Last Name, Item Rented\n'
-    for key in new_inventory.items():
-        message += '{}, {}, {}\n'.format(first_name, last_name, product_name)
+def history(name, category, decision, tax):
+    message = '\n{}, {}, {}, {}'.format(name , category, decision, tax)
     with open('history.txt', 'a') as history:
         history.write(message)

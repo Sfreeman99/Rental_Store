@@ -1,1 +1,2 @@
-First Name, Last Name, Item Rented
+First Name and Last Name, Item Rented, Returning/Renting, Money earned
+Shedlia Freeman, Atv, renting, 30.0
