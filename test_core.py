@@ -57,5 +57,6 @@ def test_deposit():
     assert (deposit('Bike', {'Bike': {'Original Price': 350.0}}) ==
             35.0)
 
-
+def test_total_revenue():
+    assert total_revenue([30.0,60.0,10.0]) == 100.0
 
