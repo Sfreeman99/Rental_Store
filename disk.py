@@ -25,3 +25,8 @@ def history(name, category, decision, tax):
     message = '\n{}, {}, {}, {}'.format(name , category, decision, tax)
     with open('history.txt', 'a') as history:
         history.write(message)
+
+def add_new_product(category,original_price,stock,rental_price):
+    message = '\n{} || {} || {} || {}'.format(category, original_price, stock, rental_price)
+    with open('inventory.txt','a') as new_product:
+        new_product.write(message)
