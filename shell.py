@@ -44,7 +44,13 @@ def rent():
         history(name, category, decision, tax)
 
 def return_item():
+    rental_products = read_inventory()
     name = input('What is your name?').title()
+    category = input('What do you want to rent:\n\t1. Atv\n\t2. Side-by-Side\n\t3. Scooter\n\t4. Bike\n:')
+    item = input('What do you want to return:\n\t1. Atv\n\t2. Side-by-Side\n\t3. Scooter\n\t4. Bike\n:')
+    add_stock(product_name, rental_products)
+    current_deposit = deposit(category,rental_products)
+    print('Here is your deposit of', current_deposit,'back.\n\tHave A Nice Day !!!')
     
 
 

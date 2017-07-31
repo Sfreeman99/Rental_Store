@@ -1,5 +1,5 @@
 
-def remove_stock(product_name, rental_products):
+def remove_stock(category, rental_products):
     ''' (int,str, dict of dict) -> 
 
     takes in how many of the products the customer wants
@@ -15,18 +15,18 @@ def remove_stock(product_name, rental_products):
     ... {'Atv':{'price': 30, 'stock': 4}})
     True
     '''
-    if product_name == 'Atv':
-        rental_products[product_name]['stock'] -= 1
-    elif product_name == 'Side-by-Side':
-        rental_products[product_name]['stock'] -= 1
-    elif product_name == 'Scooter':
-        rental_products[product_name]['stock'] -= 1
-    elif product_name == 'Bike':
-        rental_products[product_name]['stock'] -= 1
+    if category == 'Atv':
+        rental_products[category]['stock'] -= 1
+    elif category == 'Side-by-Side':
+        rental_products[category]['stock'] -= 1
+    elif category == 'Scooter':
+        rental_products[category]['stock'] -= 1
+    elif category == 'Bike':
+        rental_products[category]['stock'] -= 1
     return rental_products
         
 
-def total(how_many_hours,product_name,rental_products):
+def total(how_many_hours,category,rental_products):
     ''' int,str, dict of dict -> total
 
     returns the total transaction of what you rented
@@ -40,7 +40,7 @@ def total(how_many_hours,product_name,rental_products):
     >>> total(1, 'Atv', {'Atv':{'rental price': 30, 'stock': 3}})
     30
     '''
-    total = rental_products[product_name]['rental price'] * how_many_hours
+    total = rental_products[category]['rental price'] * how_many_hours
     return round(total, 2)
     
 def sales_tax(total_amount):
@@ -77,3 +77,30 @@ def deposit(category,rental_products):
 
     '''
     return (rental_products[category]['Original Price'] * .1)
+
+
+def add_stock(category, rental_products):
+    ''' (int,str, dict of dict) -> 
+
+    takes in how many of the products the customer wants
+    and takes it away from stock
+
+    >>> (add_stock('Atv',{'Atv':{'price': 30, 'stock': 5}}) ==
+    ... {'Atv':{'price': 30, 'stock': 6}})
+    True
+    >>> (add_stock('Atv',{'Atv':{'price': 30, 'stock': 5}}) ==
+    ... {'Atv':{'price': 30, 'stock': 6}})
+    True  
+    >>> (add_stock('Atv',{'Atv':{'price': 30, 'stock': 5}}) ==
+    ... {'Atv':{'price': 30, 'stock': 6}})
+    True
+    '''
+    if category == 'Atv':
+        rental_products[category]['stock'] += 1
+    elif category == 'Side-by-Side':
+        rental_products[category]['stock'] += 1
+    elif category == 'Scooter':
+        rental_products[category]['stock'] += 1
+    elif category == 'Bike':
+        rental_products[category]['stock'] += 1
+    return rental_products
