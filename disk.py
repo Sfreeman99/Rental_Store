@@ -20,3 +20,10 @@ def write_inventory(new_inventory):
         message += '{} || {} || {} || {}\n'.format(key, value['Original Price'],value['stock'], value['rental price'])
     with open('inventory.txt','w') as new_file:
         new_file.write(message)
+
+def history(product_name, new_inventory):
+    message = 'First Name, Last Name, Item Rented\n'
+    for key in new_inventory.items():
+        message += '{}, {}, {}\n'.format(first_name, last_name, product_name)
+    with open('history.txt', 'a') as history:
+        history.write(message)
