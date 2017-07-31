@@ -42,3 +42,13 @@ def total_revenue_reader():
 
     return revenue
 
+def history_reader():
+    with open('history.txt','r') as history:
+        history.readline()
+        history = history.readlines()
+    message = 'First Name and Last Name, Item Rented, Returning/Renting, Money earned'
+    for item in history:
+        sublist = item.split(', ')
+        message += '{}, {}, {}, {}\n'.format(sublist[0],sublist[1],sublist[2],float(sublist[3]))
+    return message  
+

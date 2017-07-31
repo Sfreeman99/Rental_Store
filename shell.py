@@ -91,7 +91,7 @@ def employee_main():
             print('Your total revenue would be:\n${:.2f}'.format(revenue))
             break
         elif decision == '3':
-            print('3 works')
+            print('These are all your transactions:\n\n',history_reader(), sep = '')
             break
 if __name__ == '__main__':
     main()
