@@ -104,3 +104,17 @@ def add_stock(category, rental_products):
     elif category == 'Bike':
         rental_products[category]['stock'] += 1
     return rental_products
+
+
+def total_revenue(revenue_reader):
+    ''' list -> total
+
+    takes in a list of numbers and totals all of them up
+
+    >>> total_revenue([30.0])
+    30.0
+    >>> total_revenue([30.0, 60.0, 10.0])
+    100.0
+
+    '''
+    return sum(revenue_reader)

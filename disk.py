@@ -30,3 +30,15 @@ def add_new_product(category,original_price,stock,rental_price):
     message = '\n{} || {} || {} || {}'.format(category, original_price, stock, rental_price)
     with open('inventory.txt','a') as new_product:
         new_product.write(message)
+
+def total_revenue_reader():
+    with open('history.txt','r') as money:
+        money.readline()
+        money_counter = money.readlines()
+    revenue = []
+    for item in money_counter:
+        sublist = item.split(', ')
+        revenue.append(float(sublist[3]))
+
+    return revenue
+

@@ -86,7 +86,9 @@ def employee_main():
             print('The item {} with the rental price of ${:.2f} has been added to the inventory'.format(category, rental_price))
             break
         elif decision == '2':
-            print('2 works')
+            total = total_revenue_reader()
+            revenue = total_revenue(total)
+            print('Your total revenue would be:\n${:.2f}'.format(revenue))
             break
         elif decision == '3':
             print('3 works')
