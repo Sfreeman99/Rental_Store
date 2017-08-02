@@ -51,43 +51,15 @@ def rent():
 
     history(name, category, decision, tax)
 
-    
-
-        # else:
-        #     print('Invalid Choice...\n')
-
-    # if category in rental_products:
-        
-    #     how_many_hours = int(input('how many hours would you like?\n:'.format(category)))
-
-    #     current_deposit = deposit(category,rental_products)
-    
-    #     new_inventory = remove_stock(category,rental_products)
-
-    #     write_inventory(new_inventory)
-
-    #     total_amount = total(how_many_hours, category, rental_products)
-
-    #     print('Your deposit would be $:',round(current_deposit, 2), sep = '')
-    
-    #     print('Your total will be $:',total_amount, sep = '')
-
-    #     print('With tax added that would be $:', round(sales_tax(total_amount), 3), sep = '')
-
-    #     decision = 'renting'
-
-    #     tax = sales_tax(total_amount)
-
-    #     history(name, category, decision, tax)
 def how_many_hours_decision(category, name):
     how_long = ''
     while True:
         how_long = int(input('How long would you like to rent the {} {}\n1hr\n2hrs\n3hrs\n4hrs?'.format(category, name)))
-        if how_long == 1 or 2 or 3 or 4:
+        if (how_long == 1) or (how_long == 2) or (how_long == 3) or (how_long == 4):
             return how_long
             break
         else:
-            print('Invalid Choice of string... Please enter an Integar')
+            print('Invalid Choice... Please choose 1, 2, 3, or 4')
 def category_decision():
     rental_products = read_inventory()
     category = ''
