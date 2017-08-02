@@ -35,8 +35,6 @@ def rent():
 
     total_amount = total(how_many_hours, category, rental_products)
 
-    print('Your deposit would be $:{:.2f}'.format(current_deposit))
-
     print('Your total will be $: {:.2f}'.format(total_amount))
 
     print('With tax added that would be $: {:.2f}'.format(sales_tax(total_amount)))
@@ -50,12 +48,12 @@ def rent():
 def how_many_hours_decision(category, name):
     how_long = ''
     while True:
-        how_long = int(input('How long would you like to rent the {} {}\n1hr\n2hrs\n3hrs\n4hrs?'.format(category, name)))
-        if (how_long == 1) or (how_long == 2) or (how_long == 3) or (how_long == 4):
-            return how_long
+        how_long = input('How long would you like to rent the {} {}\n\t1hr\n\t2hrs\n\t3hrs\n\t4hrs?'.format(category, name))
+        if (how_long == '1') or (how_long == '2') or (how_long == '3') or (how_long == '4'):
+            return int(how_long)
             break
         else:
-            print('Invalid Choice... Please choose 1, 2, 3, or 4')
+            print('Invalid Choice... Please choose 1, 2, 3, or 4\n')
 def category_decision():
     rental_products = read_inventory()
     category = ''
@@ -93,10 +91,11 @@ def main():
             print('please choose one or the other and spell it correctly...')
 
 def employee_main():
-    print('Welcome employee of Shedlia\'s Rental Store')
+    name = input('What is your name?\n\t:').title().strip()
+    print('Welcome {}!!!'.format(name))
     decision = ''
-    while decision != '1' or '2' or '3':
-        decision = input('What do you want to do today?\n\t1. Add product to stock\n\t2. Check total revenue\n\t3.See transaction History\n\t**Pick numbers Only**\n:')
+    while decision != 'q':
+        decision = input('What do you want to do today?\n\t1. Add product to stock\n\t2. Check total revenue\n\t3.See transaction History\n\t**Pick numbers Only**\n**Choose ''q'' to quit at any time**\n:')
         if decision == '1':
             category = input('What is the name of the item you want to rent?\n**How you type it is how it will show in the inventory**\n:')
             original_price = float(input('what is the price you payed for one of that particular item?\n:'))
@@ -104,18 +103,18 @@ def employee_main():
             rental_price = float(input('What do you want the rental price to be?\n:'))
             add_new_product(category,original_price,stock,rental_price)
             print('The item {} with the rental price of ${:.2f} has been added to the inventory'.format(category, rental_price))
-            break
         elif decision == '2':
             total = total_revenue_reader()
             revenue = total_revenue(total)
-            print('Your total revenue would be:\n${:.2f}'.format(revenue))
-            break
+            print('Your total revenue would be:\n${:.2f}\n'.format(revenue))
+
+        elif decision == 'q':
+            print('Have a nice day {}!!!'.format(name))
         elif decision == '3':
             print('These are all your transactions:\n\n',history_reader(), sep = '')
-            break
-
+            
         else:
-            print('Not Valid Input... Please Try Again!!!')
+            print('Not Valid Input... Please Try Again!!!\n')
             
 
 
