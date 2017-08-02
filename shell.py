@@ -2,18 +2,19 @@ from core import *
 from disk import *
 def customer_main():
     print('Welcome Customer')
-    # give the user choices through numbers So it can be easier to choose what you want
-    decision = input(''' What would you like to do today?:
-    ** You have to type out the name not the number **
-    \t1. Rent
-    \t2. Return
-    :''').title().strip()
-    #user chooses through numbers what they want
-    #if they choose the number 1 they get an atv in stock
-    if decision == 'Rent':
-        rent()
-    elif decision == 'Return':
-        return_item()
+    decision = ''
+    while decision != 'Rent' or 'Return':
+        decision = input(''' What would you like to do today?:
+        ** You have to type out the name not the number **
+        \t1. Rent
+        \t2. Return
+        :''').title().strip()
+        if decision == 'Rent':
+            rent()
+        elif decision == 'Return':
+            return_item()
+        else:
+            print('Invalid Choice... Please type Rent or Return\n')
 
 def rent():
     #the variable 'how many' is used to see how many of the products the customer wants
