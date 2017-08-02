@@ -19,9 +19,10 @@ def customer_main():
             print('Invalid Choice... Please type Rent or Return\n')
 
 def rent():
+    decision = 'rent'
     rental_products = read_inventory()
     name = input('What is your first and last name?\n:').title()
-    category = category_decision()
+    category = category_decision(decision)
 
     current_deposit = deposit(category,rental_products)    
 
@@ -39,8 +40,6 @@ def rent():
 
     print('With tax added that would be $: {:.2f}'.format(sales_tax(total_amount)))
 
-    decision = 'renting'
-
     tax = sales_tax(total_amount)
 
     history(name, category, decision, tax)
@@ -54,11 +53,11 @@ def how_many_hours_decision(category, name):
             break
         else:
             print('Invalid Choice... Please choose 1, 2, 3, or 4\n')
-def category_decision():
+def category_decision(decision):
     rental_products = read_inventory()
     category = ''
     while True:
-        category = input('What do you want to rent:\n\t**Spell Exactly how it is shown**\n\t1. Atv\n\t2. Side-by-Side\n\t3. Scooter\n\t4. Bike\n:')
+        category = input('What do you want to {}:\n\t**Spell Exactly how it is shown**\n\t1. Atv\n\t2. Side-by-Side\n\t3. Scooter\n\t4. Bike\n:'.format(decision)).strip()
         if category in rental_products:
             return category
             break
@@ -66,15 +65,14 @@ def category_decision():
             print('Invalid Choice.... Please Try Again\n')
 
 def return_item():
+    decision = 'return'
     rental_products = read_inventory()
     name = input('What is your name?\n:').title().strip()
-    category = input('What do you want to return:\n\t1. Atv\n\t2. Side-by-Side\n\t3. Scooter\n\t4. Bike\n:')
+    category = category_decision(decision)
     new_inventory = add_stock(category, rental_products)
     write_inventory(new_inventory)
     current_deposit = deposit(category,rental_products)
     print('Here is your deposit of ${:.2f} back {}.\n\tHave A Nice Day !!!'.format(current_deposit, name))
-    decision = 'returning'
-    history(name,category,decision)
   
 def main():
     print('Welcome to Shedlia\'s Wheels 4 You')
@@ -97,7 +95,7 @@ def employee_main():
     while decision != 'q':
         decision = input('What do you want to do today?\n\t1. Add product to stock\n\t2. Check total revenue\n\t3.See transaction History\n\t**Pick numbers Only**\n**Choose ''q'' to quit at any time**\n:')
         if decision == '1':
-            category = input('What is the name of the item you want to rent?\n**How you type it is how it will show in the inventory**\n:')
+            category = input('What is the name of the item you want to rent out?\n**How you type it is how it will show in the inventory**\n:')
             original_price = float(input('what is the price you payed for one of that particular item?\n:'))
             stock = int(input('How many of them do you have currently?\n:'))
             rental_price = float(input('What do you want the rental price to be?\n:'))
