@@ -1,9 +1,10 @@
 from core import *
 from disk import *
 def customer_main():
-    print('Welcome to Shedlia\'s Atv and Side-By-Side Rental Agency')
+    print('Welcome Customer')
     # give the user choices through numbers So it can be easier to choose what you want
-    decision = input(''' What would you like:
+    decision = input(''' What would you like to do today?:
+    ** You have to type out the name not the number **
     \t1. Rent
     \t2. Return
     :''').title().strip()
@@ -51,15 +52,9 @@ def return_item():
     write_inventory(new_inventory)
     current_deposit = deposit(category,rental_products)
     print('Here is your deposit of ${:.2f} back {}.\n\tHave A Nice Day !!!'.format(current_deposit, name))
-    
-
-
-        
-
-#if they choose the number 2 they get a side-by-side
-#sbs stands for side-by-side  
+  
 def main():
-    print('Welcome to Shedlia\'s Atv and Side-By-Side Rental Agency')
+    print('Welcome to Shedlia\'s Wheels 4 You')
     answer = ''
     while answer != 'customer' or 'employee':
         answer = input('Are you a customer or employee\n:').lower()
@@ -93,6 +88,10 @@ def employee_main():
         elif decision == '3':
             print('These are all your transactions:\n\n',history_reader(), sep = '')
             break
+
+        else:
+            print('Not Valid Input... Please Try Again!!!')
+            
 if __name__ == '__main__':
     main()
 

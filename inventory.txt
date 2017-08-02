@@ -1,5 +1,5 @@
 Category || Original Price || In Stock || Price to Rent ||
-Scooter || 1000.0 || 10 || 15.0
+Atv || 8699.0 || 9 || 30.0
 Side-by-Side || 19000.0 || 10 || 100.0
-Bike || 350.0 || 10|| 5.0
-Atv || 8699.0 || 10 || 30.0
+Bike || 350.0 || 10 || 5.0
+Scooter || 1000.0 || 10 || 15.0
