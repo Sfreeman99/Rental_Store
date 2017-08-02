@@ -19,19 +19,15 @@ def customer_main():
             print('Invalid Choice... Please type Rent or Return\n')
 
 def rent():
-    #the variable 'how many' is used to see how many of the products the customer wants
     rental_products = read_inventory()
     name = input('What is your first and last name?\n:').title()
     category = category_decision()
-    # while category != 'Atv' or 'Side-by-Side' or 'Scooter' or 'Bike':
-    #     category = input('What do you want to rent:\n\t**Spell Exactly how it is shown**\n\t1. Atv\n\t2. Side-by-Side\n\t3. Scooter\n\t4. Bike\n:')
-    #     if category in rental_products:
-        
-    # how_many_hours = int(input('how many hours would you like?\n:'.format(category)))
+
+    current_deposit = deposit(category,rental_products)    
+
+    print('Your deposit would be $:{:.2f}'.format(current_deposit))    
 
     how_many_hours = how_many_hours_decision(category, name)
-
-    current_deposit = deposit(category,rental_products)
 
     new_inventory = remove_stock(category,rental_products)
 
@@ -39,11 +35,11 @@ def rent():
 
     total_amount = total(how_many_hours, category, rental_products)
 
-    print('Your deposit would be $:',round(current_deposit, 2), sep = '')
+    print('Your deposit would be $:{:.2f}'.format(current_deposit))
 
-    print('Your total will be $:',total_amount, sep = '')
+    print('Your total will be $: {:.2f}'.format(total_amount))
 
-    print('With tax added that would be $:', round(sales_tax(total_amount), 3), sep = '')
+    print('With tax added that would be $: {:.2f}'.format(sales_tax(total_amount)))
 
     decision = 'renting'
 
@@ -73,12 +69,14 @@ def category_decision():
 
 def return_item():
     rental_products = read_inventory()
-    name = input('What is your name?\n:').title()
+    name = input('What is your name?\n:').title().strip()
     category = input('What do you want to return:\n\t1. Atv\n\t2. Side-by-Side\n\t3. Scooter\n\t4. Bike\n:')
     new_inventory = add_stock(category, rental_products)
     write_inventory(new_inventory)
     current_deposit = deposit(category,rental_products)
     print('Here is your deposit of ${:.2f} back {}.\n\tHave A Nice Day !!!'.format(current_deposit, name))
+    decision = 'returning'
+    history(name,category,decision)
   
 def main():
     print('Welcome to Shedlia\'s Wheels 4 You')
@@ -87,10 +85,10 @@ def main():
         answer = input('Are you a customer or employee\n:').lower().strip()
         if answer == 'customer':
             customer_main()
-            break
+            exit()
         elif answer == 'employee':
             employee_main()
-            break
+            exit()
         else:
             print('please choose one or the other and spell it correctly...')
 
