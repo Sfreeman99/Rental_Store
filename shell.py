@@ -21,8 +21,9 @@ def customer_main():
 def rent():
     decision = 'rent'
     rental_products = read_inventory()
+    current_menu = menu(rental_products)
     name = input('What is your first and last name?\n:').title()
-    category = category_decision(decision)
+    category = category_decision(decision, current_menu)
 
     current_deposit = deposit(category,rental_products)    
 
@@ -47,17 +48,19 @@ def rent():
 def how_many_hours_decision(category, name):
     how_long = ''
     while True:
-        how_long = input('How long would you like to rent the {} {}\n\t1hr\n\t2hrs\n\t3hrs\n\t4hrs?'.format(category, name))
+        how_long = input('How long would you like to rent the {} {}\n\t1. 1hr\n\t2. 2hrs\n\t3. 3hrs\n\t4. 4hrs?\n:'.format(category, name))
         if (how_long == '1') or (how_long == '2') or (how_long == '3') or (how_long == '4'):
             return int(how_long)
             break
         else:
             print('Invalid Choice... Please choose 1, 2, 3, or 4\n')
-def category_decision(decision):
+def category_decision(decision, current_menu):
     rental_products = read_inventory()
     category = ''
     while True:
-        category = input('What do you want to {}:\n\t**Spell Exactly how it is shown**\n\t1. Atv\n\t2. Side-by-Side\n\t3. Scooter\n\t4. Bike\n:'.format(decision)).strip()
+        # category = input('What do you want to {}:\n\t**Spell Exactly how it is shown**\n\t1. Atv\n\t2. Side-by-Side\n\t3. Scooter\n\t4. Bike\n:'.format(decision)).strip()
+        category = input('What do you want to {}:\n\t**Spell Exactly how it is shown**\n{}'.format(decision, current_menu)).strip()
+        
         if category in rental_products:
             return category
             break
@@ -114,10 +117,6 @@ def employee_main():
         else:
             print('Not Valid Input... Please Try Again!!!\n')
             
-
-
-
-
 if __name__ == '__main__':
     main()
 

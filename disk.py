@@ -55,3 +55,10 @@ def history_reader():
                     ----------------------------------------\n'''.format(sublist[0],sublist[1],sublist[2],float(sublist[3]))
     return message  
 
+def menu(inventory):
+    rental_products = read_inventory()
+    message = '''------------------------------------------\n| Product Name | In Stock | Rental Price |\n------------------------------------------\n'''
+    for item in rental_products:
+        message += '| {} | ${:.2f} | {} |\n'.format(item,rental_products[item]['rental price'], rental_products[item]['stock'])
+    message += '------------------------------------------'
+    return message
