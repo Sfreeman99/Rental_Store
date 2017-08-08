@@ -1,3 +1,3 @@
 First Name and Last Name, Item Rented, Returning/Renting, Money earned
-Shedlia Freeman, Atv, rent, 32.1
-Shedlia Freeman, Atv, rent, 32.1
+Shedlia Freeman, Atv, return, -869.9000000000001
+Shedlia Freeman, Atv, rent, 962.8930000000001

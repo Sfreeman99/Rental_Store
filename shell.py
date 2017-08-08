@@ -38,7 +38,8 @@ def rent():
 
     disk.write_inventory(new_inventory)
 
-    total_amount = core.total(how_many_hours, category, rental_products)
+    total_amount = core.total(how_many_hours, category,
+                              rental_products) + current_deposit
 
     print('Your total will be $: {:.2f}'.format(total_amount))
 
@@ -83,14 +84,15 @@ def category_decision(decision, current_menu):
 def return_item():
     decision = 'return'
     rental_products = disk.read_inventory()
+    current_menu = disk.menu(rental_products)
     name = input('What is your name?\n:').title().strip()
-    category = category_decision(decision)
+    category = category_decision(decision, current_menu)
     new_inventory = core.add_stock(category, rental_products)
     disk.write_inventory(new_inventory)
     current_deposit = core.deposit(category, rental_products)
     print('Here is your deposit of ${:.2f} back {}.\n\tHave A Nice Day !!!'.
           format(current_deposit, name))
-    disk.history(name, category, decision, tax)
+    disk.return_history(name, category, decision, current_deposit)
 
 
 def main():
