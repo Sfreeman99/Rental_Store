@@ -1,24 +1,3 @@
 First Name and Last Name, Item Rented, Returning/Renting, Money earned
-Shedlia Freeman, Atv, renting, 30.0
-Shedlia Freeman, Atv, renting, 32.1
-Shedlia Freeman, Atv, renting, 32.1
-Shedlia Freeman, Atv, renting, 32.1
-Shedlia Freeman, Side-by-Side, renting, 214.0
-Shedlia Freeman, Bike, renting, 5.35
-Shedlia Freeman, Scooter, renting, 80.25
-Shedlia Freeman, Bike, renting, 5.35
-Shedlia Freeman, Bike, renting, 5.35
-Shedlia, Atv, renting, 64.2
-Shedlia Freeman, Atv, renting, 64.2
-Shedlia Freeman, Atv, renting, 64.2
-Shedlia Freeman, Atv, renting, 64.2
-Shedlia Freeman, Atv, renting, 64.2
-Shedlia Freeman, Atv, renting, 64.2
-Angel, Atv, renting, 32.1
-Shedlia Freeman, Atv, renting, 160.5
-Shedlia Freeman, Bike, renting, 5.35
-Shedlia Freeman, Atv, renting, 128.4
-Shedlia Freeman, Atv, renting, 64.2
-Shedlia Freeman, Atv, renting, 64.2
-Edgar Guzman, Bike, renting, 16.05
+Shedlia Freeman, Atv, rent, 32.1
 Shedlia Freeman, Atv, rent, 32.1
