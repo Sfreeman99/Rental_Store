@@ -3,7 +3,7 @@ import disk
 
 
 def main():
-    print('Welcome to Shedlia\'s Wheels 4 U')
+    print('Welcome to Shedlia\'s Wheels 4 U'.center(100))
     answer = ''
     while True:
         answer = input('Are you a customer or employee\n:').lower().strip()
@@ -27,16 +27,10 @@ def employee_main():
             'q'
             ' to quit at any time**\n:')
         if decision == '1':
-            category = input(
-                'What is the name of the item you want to rent out?\n**How you type it is how it will show in the inventory**\n:'
-            )
-            original_price = float(
-                input(
-                    'what is the price you payed for one of that particular item?\n:'
-                ))
-            stock = int(input('How many of them do you have currently?\n:'))
-            rental_price = float(
-                input('What do you want the rental price to be?\n:'))
+            category = category_name()
+            original_price = price()
+            stock = stock_quantity()
+            rental_price = rental_value()
             disk.add_new_product(category, original_price, stock, rental_price)
             print(
                 'The item {} with the rental price of ${:.2f} has been added to the inventory'.
@@ -147,6 +141,30 @@ def category_decision(decision, current_menu):
             break
         else:
             print('Invalid Choice.... Please Try Again\n')
+
+
+def category_name():
+    category = input(
+        'What is the name of the item you want to rent out?\n**How you type it is how it will show in the inventory**\n:'
+    )
+    return category
+
+
+def price():
+    decision = float(
+        input(
+            'what is the price you payed for one of that particular item?\n:'))
+    return decision
+
+
+def stock_quantity():
+    decision = int(input('How many of them do you have currently?\n:'))
+    return decision
+
+
+def rental_value():
+    decision = float(input('What do you want the rental price to be?\n:'))
+    return decision
 
 
 if __name__ == '__main__':
