@@ -1,3 +1,9 @@
 First Name and Last Name, Item Rented, Returning/Renting, Money earned
 Shedlia Freeman, Atv, return, -869.9000000000001
 Shedlia Freeman, Atv, rent, 962.8930000000001
+Shelly Freeman, Atv, rent, 1091.2930000000001
+Angel, Bike, rent, 48.15
+Shedlia Freeman, Bike, return, -35.0
+Shelly Freeman, Atv, return, -869.9000000000001
+Jo Tay, Side-by-Side, rent, 2461.0
+Jo Tay, Side-by-Side, return, -1900.0
