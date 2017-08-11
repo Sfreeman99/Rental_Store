@@ -67,7 +67,7 @@ def history_reader():
 
 def menu(inventory):
     rental_products = read_inventory()
-    message = '''------------------------------------------\n| Product Name | In Stock | Rental Price |\n------------------------------------------\n'''
+    message = '''------------------------------------------\n| Product Name | Rental Price | In Stock |\n------------------------------------------\n'''
     for item in rental_products:
         message += '| {} | ${:.2f} | {} |\n'.format(
             item, rental_products[item]['rental price'],
